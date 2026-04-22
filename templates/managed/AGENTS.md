@@ -17,6 +17,15 @@ Use files, not assumptions.
 - Long-term curated memory belongs in `MEMORY.md`
 - If something should survive session restarts, write it down
 
+## Company context
+
+The source of truth for Demondog business context lives in `company/`.
+
+- Start with `company/README.md`
+- Read the relevant deeper files before doing Demondog-related client, service, offer, positioning, or strategy work
+- Prefer these docs over memory or guesswork when they conflict
+- Do not invent services, promises, pricing, or positioning that are not supported by the docs
+
 ## Workspace guidance
 
 - Read before editing

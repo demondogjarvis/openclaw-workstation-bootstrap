@@ -68,6 +68,19 @@ while IFS= read -r rel || [[ -n "$rel" ]]; do
   update_managed_file "$rel"
 done < "$MANAGED_LIST"
 
+mkdir -p "$TARGET_DIR/company"
+if rsync -ani "$ROOT_DIR/company/" "$TARGET_DIR/company/" | grep -q .; then
+  if [[ -d "$TARGET_DIR/company" ]]; then
+    mkdir -p "$BACKUP_DIR"
+    rsync -a "$TARGET_DIR/company/" "$BACKUP_DIR/company/"
+  fi
+  rsync -a "$ROOT_DIR/company/" "$TARGET_DIR/company/"
+  echo "updated managed directory: company/"
+  UPDATED=1
+else
+  echo "up to date: company/"
+fi
+
 cp "$MANAGED_LIST" "$STATE_DIR/managed-files.txt"
 
 echo "updatedAt=$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$STATE_DIR/update-state.txt"

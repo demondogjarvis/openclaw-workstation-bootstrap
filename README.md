@@ -1,11 +1,12 @@
 # OpenClaw Workstation Bootstrap
 
-Reusable bootstrap for setting up an OpenClaw workstation without rebuilding the same assistant environment from scratch each time.
+Reusable bootstrap for setting up Demondog OpenClaw workstations without rebuilding the same assistant environment from scratch each time.
 
 This repo is meant to be cloned or forked by a human or teammate, then used to scaffold a local OpenClaw workspace with:
 
 - shared workstation defaults
 - reusable assistant behavior files
+- Demondog company context docs
 - local-only identity and user config files
 - a safe update path for managed files later
 
@@ -26,6 +27,12 @@ These are rendered from this repo and can be refreshed later with `scripts/updat
 - `AGENTS.md`
 - `SOUL.md`
 - `HEARTBEAT.md`
+
+### Managed shared content
+
+These are synced from this repo into the workstation as shared source-of-truth content:
+
+- `company/`
 
 ### Local extension files
 
@@ -68,10 +75,11 @@ If you omit the target path, the current directory is used.
 
 The update script:
 
-- refreshes generated managed files only
+- refreshes generated managed files
+- syncs shared company docs under `company/`
 - preserves local extension files
 - leaves local identity/private files alone
-- creates timestamped backups before replacing generated files
+- creates timestamped backups before replacing generated files or synced company docs
 
 ## Typical workflow
 
@@ -85,6 +93,17 @@ The update script:
 ## Repo layout
 
 ```text
+company/
+  README.md
+  demondog-overview.md
+  values.md
+  positioning.md
+  tone-of-voice.md
+  ideal-clients.md
+  faq.md
+  services/
+  offers/
+  case-studies/
 scripts/
   install.sh
   update.sh
