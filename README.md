@@ -15,16 +15,27 @@ This repo is meant to be cloned or forked by a human or teammate, then used to s
 - Keep local/private/runtime state out of the bootstrap update path
 - Make new workstation setup fast
 - Make later updates predictable
+- Allow workstation-specific behavior to extend shared files safely
 
 ## Managed vs local files
 
-### Managed files
+### Generated managed files
 
-These come from this repo and can be refreshed later with `scripts/update.sh`:
+These are rendered from this repo and can be refreshed later with `scripts/update.sh`:
 
 - `AGENTS.md`
 - `SOUL.md`
 - `HEARTBEAT.md`
+
+### Local extension files
+
+These are optional local fragments that get appended to the matching managed file when present:
+
+- `AGENTS.local.md`
+- `SOUL.local.md`
+- `HEARTBEAT.local.md`
+
+This lets a workstation keep local instructions while still inheriting updates from the shared base.
 
 ### Local files
 
@@ -57,17 +68,19 @@ If you omit the target path, the current directory is used.
 
 The update script:
 
-- refreshes managed files only
+- refreshes generated managed files only
+- preserves local extension files
 - leaves local identity/private files alone
-- creates timestamped backups before replacing managed files
+- creates timestamped backups before replacing generated files
 
 ## Typical workflow
 
 1. Clone or fork this repo
 2. Run `scripts/install.sh`
 3. Edit local files like `IDENTITY.md`, `USER.md`, and `TOOLS.md`
-4. Use the workstation normally
-5. Later, pull changes in this bootstrap repo and run `scripts/update.sh`
+4. Add workstation-specific instructions to `AGENTS.local.md` or `SOUL.local.md` if needed
+5. Use the workstation normally
+6. Later, pull changes in this bootstrap repo and run `scripts/update.sh`
 
 ## Repo layout
 
@@ -81,6 +94,9 @@ templates/
     SOUL.md
     HEARTBEAT.md
   local/
+    AGENTS.local.md.example
+    SOUL.local.md.example
+    HEARTBEAT.local.md.example
     IDENTITY.md.example
     USER.md.example
     TOOLS.md.example
@@ -91,4 +107,5 @@ managed-files.txt
 
 - The installer and updater are intentionally simple and file-based.
 - This repo is the source of truth for shared defaults, not for per-user identity.
+- Managed files are rendered from the shared base plus optional local fragments.
 - If you want stricter rollout control later, tag releases and sync from known versions instead of always using `main`.

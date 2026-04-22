@@ -9,20 +9,32 @@ MANAGED_LIST="$ROOT_DIR/managed-files.txt"
 
 mkdir -p "$TARGET_DIR" "$STATE_DIR" "$TARGET_DIR/memory"
 
-copy_managed_file() {
+local_override_path_for() {
+  local rel="$1"
+  printf '%s/%s.local.md' "$TARGET_DIR" "${rel%.md}"
+}
+
+render_managed_file() {
   local rel="$1"
   local src="$ROOT_DIR/templates/managed/$rel"
   local dest="$TARGET_DIR/$rel"
-
-  mkdir -p "$(dirname "$dest")"
+  local local_override
+  local_override="$(local_override_path_for "$rel")"
 
   if [[ -f "$dest" && "$FORCE" != "--force" ]]; then
     echo "skip managed file already exists: $rel"
     return
   fi
 
-  cp "$src" "$dest"
-  echo "installed managed file: $rel"
+  mkdir -p "$(dirname "$dest")"
+  cat "$src" > "$dest"
+
+  if [[ -f "$local_override" ]]; then
+    printf '\n\n## Local workstation additions\n\n' >> "$dest"
+    cat "$local_override" >> "$dest"
+  fi
+
+  echo "rendered managed file: $rel"
 }
 
 copy_local_example_if_missing() {
@@ -40,14 +52,17 @@ copy_local_example_if_missing() {
   echo "created local file from template: $target_name"
 }
 
-while IFS= read -r rel || [[ -n "$rel" ]]; do
-  [[ -z "$rel" ]] && continue
-  copy_managed_file "$rel"
-done < "$MANAGED_LIST"
-
+copy_local_example_if_missing "AGENTS.local.md.example" "AGENTS.local.md"
+copy_local_example_if_missing "SOUL.local.md.example" "SOUL.local.md"
+copy_local_example_if_missing "HEARTBEAT.local.md.example" "HEARTBEAT.local.md"
 copy_local_example_if_missing "IDENTITY.md.example" "IDENTITY.md"
 copy_local_example_if_missing "USER.md.example" "USER.md"
 copy_local_example_if_missing "TOOLS.md.example" "TOOLS.md"
+
+while IFS= read -r rel || [[ -n "$rel" ]]; do
+  [[ -z "$rel" ]] && continue
+  render_managed_file "$rel"
+done < "$MANAGED_LIST"
 
 cp "$MANAGED_LIST" "$STATE_DIR/managed-files.txt"
 
