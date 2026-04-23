@@ -2,7 +2,7 @@
 
 **Client:** LRF (Lantbrukarnas Riksförbund)  
 **Project:** LRF Kassan  
-**Status:** draft  
+**Status:** published  
 **Last updated:** 2026-04-23  
 
 ---
