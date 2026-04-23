@@ -1,12 +1,12 @@
 # OpenClaw Workstation Bootstrap
 
-Reusable bootstrap for setting up Demondog OpenClaw workstations without rebuilding the same assistant environment from scratch each time.
+Reusable bootstrap for setting up Demon Dog OpenClaw workstations without rebuilding the same assistant environment from scratch each time.
 
 This repo is meant to be cloned or forked by a human or teammate, then used to scaffold a local OpenClaw workspace with:
 
 - shared workstation defaults
 - reusable assistant behavior files
-- Demondog company context docs
+- Demon Dog company context docs
 - local-only identity and user config files
 - a safe update path for managed files later
 
@@ -95,7 +95,7 @@ The update script:
 ```text
 company/
   README.md
-  demondog-overview.md
+  demon-dog-overview.md
   values.md
   positioning.md
   tone-of-voice.md

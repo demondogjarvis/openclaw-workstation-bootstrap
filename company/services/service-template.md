@@ -1,6 +1,6 @@
 # Service Name
 
-Status: draft template
+Status: template
 Last updated: 2026-04-22
 
 ## Summary

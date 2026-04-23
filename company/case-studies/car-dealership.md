@@ -2,7 +2,7 @@
 
 **Client:** Car Dealership (name withheld)  
 **Project:** Odoo Implementation & Custom Modules  
-**Status:** draft  
+**Status:** published  
 **Last updated:** 2026-04-23  
 
 ---

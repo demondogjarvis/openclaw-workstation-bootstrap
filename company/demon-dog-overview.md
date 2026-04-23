@@ -1,6 +1,6 @@
 # Demon Dog Overview
 
-Status: draft template
+Status: active
 Last updated: 2026-04-22
 
 ## Summary
@@ -18,7 +18,7 @@ Demon Dog builds and improves digital systems that help businesses work more eff
 
 Demon Dog is a development and digital solutions company that helps businesses improve how they operate through better systems. We design and build custom applications, websites, and integrations, and implement platforms like CRM, ERP, and cloud infrastructure. By combining tailored development with reusable, industry-specific solutions, we deliver efficient, scalable systems that evolve over time. Our work focuses on solving real business problems—reducing inefficiencies, automating processes, and giving companies better visibility and control over their operations.
 
-## What Demondog does
+## What Demon Dog does
 
 - Builds custom web, mobile, and backend applications
 - Develops and integrates APIs and microservices
@@ -30,7 +30,7 @@ Demon Dog is a development and digital solutions company that helps businesses i
 - Provides technical strategy and guidance for digital growth
 - Builds reusable, industry-specific solutions that can be improved across multiple clients
 
-## What Demondog does not do
+## What Demon Dog does not do
 
 - Does not build low-quality, quick “cheap” solutions just to meet a budget
 - Does not deliver generic solutions without understanding the client’s business

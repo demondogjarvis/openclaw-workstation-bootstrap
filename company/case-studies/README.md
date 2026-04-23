@@ -1,6 +1,6 @@
-# Demondog Case Studies
+# Demon Dog Case Studies
 
-Status: draft index
+Status: active index
 Last updated: 2026-04-22
 
 Use this directory for proof, examples, and outcomes.

@@ -1,4 +1,4 @@
-# Demondog FAQ
+# Demon Dog FAQ
 
 **Status:** active  
 **Last updated:** 2026-04-23  

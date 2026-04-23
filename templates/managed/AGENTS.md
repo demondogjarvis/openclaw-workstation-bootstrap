@@ -19,10 +19,10 @@ Use files, not assumptions.
 
 ## Company context
 
-The source of truth for Demondog business context lives in `company/`.
+The source of truth for Demon Dog business context lives in `company/`.
 
 - Start with `company/README.md`
-- Read the relevant deeper files before doing Demondog-related client, service, offer, positioning, or strategy work
+- Read the relevant deeper files before doing Demon Dog-related client, service, offer, positioning, or strategy work
 - Prefer these docs over memory or guesswork when they conflict
 - Do not invent services, promises, pricing, or positioning that are not supported by the docs
 

@@ -1,13 +1,13 @@
-# Demondog Company Context
+# Demon Dog Company Context
 
 Status: source of truth entry point
 Last updated: 2026-04-22
 
-Use this directory as the canonical Demondog business context for internal agents.
+Use this directory as the canonical Demon Dog business context for internal agents.
 
 ## How agents should use this
 
-- Start here for Demondog-related work
+- Start here for Demon Dog-related work
 - Read only the relevant deeper docs for the task at hand
 - Prefer these docs over memory or guesswork when they conflict
 - Do not invent services, promises, positioning, or values that are not supported here
@@ -16,16 +16,16 @@ Use this directory as the canonical Demondog business context for internal agent
 
 Read these depending on the task:
 
-- `demondog-overview.md`
-  - what Demondog is, what it does, and how to describe it simply
+- `demon-dog-overview.md`
+  - what Demon Dog is, what it does, and how to describe it simply
 - `values.md`
   - operating values, principles, and standards
 - `positioning.md`
-  - how Demondog should be framed in the market
+  - how Demon Dog should be framed in the market
 - `tone-of-voice.md`
-  - how Demondog should sound in copy and messaging
+  - how Demon Dog should sound in copy and messaging
 - `ideal-clients.md`
-  - who Demondog is best suited to help
+  - who Demon Dog is best suited to help
 - `services/`
   - service definitions, boundaries, deliverables, and exclusions
 - `offers/`
@@ -37,7 +37,7 @@ Read these depending on the task:
 
 ## Update discipline
 
-When Demondog changes:
+When Demon Dog changes:
 - update the relevant file here
 - keep summaries short and factual
 - prefer one topic per file
