@@ -69,12 +69,12 @@ while IFS= read -r rel || [[ -n "$rel" ]]; do
 done < "$MANAGED_LIST"
 
 mkdir -p "$TARGET_DIR/company"
-if rsync -ani "$ROOT_DIR/company/" "$TARGET_DIR/company/" | grep -q .; then
+if rsync -ani --delete "$ROOT_DIR/company/" "$TARGET_DIR/company/" | grep -q .; then
   if [[ -d "$TARGET_DIR/company" ]]; then
     mkdir -p "$BACKUP_DIR"
     rsync -a "$TARGET_DIR/company/" "$BACKUP_DIR/company/"
   fi
-  rsync -a "$ROOT_DIR/company/" "$TARGET_DIR/company/"
+  rsync -a --delete "$ROOT_DIR/company/" "$TARGET_DIR/company/"
   echo "updated managed directory: company/"
   UPDATED=1
 else

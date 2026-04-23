@@ -65,7 +65,7 @@ while IFS= read -r rel || [[ -n "$rel" ]]; do
 done < "$MANAGED_LIST"
 
 mkdir -p "$TARGET_DIR/company"
-rsync -a "$ROOT_DIR/company/" "$TARGET_DIR/company/"
+rsync -a --delete "$ROOT_DIR/company/" "$TARGET_DIR/company/"
 echo "synced managed directory: company/"
 
 cp "$MANAGED_LIST" "$STATE_DIR/managed-files.txt"
